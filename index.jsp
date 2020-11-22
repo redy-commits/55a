@@ -128,7 +128,7 @@
                                 <td><c:out value = "${row.fecha}"/></td>
                                 <td><c:out value = "${row.autor}"/></td>
                                 <td>
-                                    <a id="actualizate" href="frmupdate.jsp?isbn=${row.isbn}&titulo=${row.titulo}&editorial=${row.editorial}&fecha=${row.fecha}&autor=${row.autor}" class="btn btn-warning">Actualizar</a>
+                                    <a id="actualizate" href="frmupdate.jsp?id=${row.Id}&isbn=${row.isbn}&titulo=${row.titulo}&editorial=${row.editorial}&fecha=${row.fecha}&autor=${row.autor}" class="btn btn-warning">Actualizar</a>
                                     <br><a id="eliminate" onclick="eliminar('${row.isbn}')" class="btn btn-danger" >Eliminar</a>
                                 </td>
                             </tr>
