@@ -13,7 +13,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/estilos.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Creando libro</title>
         <style>

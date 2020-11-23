@@ -85,15 +85,38 @@
                         </div>
 
                         <div class="col-md-4"> <!-- Fecha Publicacion-->
-                            <label for="fechaPublicacion_id" class="control-label">Fecha de Publicación</label>
-                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="">
+                            <label for="fechaPublicacion_id" class="control-label" >Fecha de Publicación</label>
+                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" >
                         </div>        
                     </div>
                 </div>
                 <div class="form-group"> <!-- Boton Insertar -->
                     <input type="hidden" name="Action" value="Crear" checked/>
-                    <button id="insertar" type="SUBMIT" name="boton_A" value="INSERTAR" class="btn btn-success" />INSERTAR</button>
+                    <button id="insertar" type="SUBMIT" name="boton_A" value="INSERTAR" class="btn btn-success" disabled />INSERTAR</button>
                 </div>     
+                <script type="text/javascript">      
+                    function habilitar(){
+                        txtIsbn=document.getElementById("isbn").value;
+                        txtTitulo=document.getElementById("titulo").value;
+                        txtAutor=document.getElementById("autor").value;
+                        txtFecha=document.getElementById("fechaPublicacion").value;
+                        val=0;
+                        if(txtIsbn=="" || txtTitulo=="" || txtAutor=="" || txtFecha==""){
+                            val++;
+                        }
+                        if(val==0){
+                            document.getElementById("insertar").disabled=false;
+                        }
+                        else{
+                            document.getElementById("insertar").disabled=true;
+                        }
+                    }
+                    document.getElementById("isbn").addEventListener("keyup", habilitar);
+                    document.getElementById("titulo").addEventListener("keyup", habilitar);
+                    document.getElementById("autor").addEventListener("keyup", habilitar);
+                    document.getElementById("fechaPublicacion").addEventListener("click", habilitar);
+                    document.getElementById("insertar").addEventListener("click", () => {});
+                </script>
             </form>
         </div>
         <div class="container p-3 my-3 bg-light text-dark border" id="tablaDatos">

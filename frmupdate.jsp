@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ include file="fuentedatos.jsp" %>
 
-<c:set var="pageId" value="Index" />
+<c:set var="pageId" value="form_Act" />
 <c:set var="standalone" value="not" />
 <%@ include file="seguridad.jsp" %>
 
