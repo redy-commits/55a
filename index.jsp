@@ -9,6 +9,7 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<%@ include file="fuentedatos.jsp" %>
 
 <c:set var="pageId" value="Index" />
 <c:set var="standalone" value="not" />
@@ -36,18 +37,12 @@
     </head>
     <body>
         <script type="text/javascript" src="JS/metodos.js"></script>
-        <!--Conexion a base de datos-->
-        <sql:setDataSource var = "fuenteDatos" driver = "org.mariadb.jdbc.Driver"
-                           url = "jdbc:mariadb://localhost:3308/biblioteca"
-                           user = "root"  password = ""/>
-        <!--Fin Conexion a base de datos-->
-
         <div class="container p-3 my-3 bg-light border" id="formulario">
             <!-- el action ahora es con insert.jsp-->
             <form  method="get" name="Actualizar"  action="insert.jsp">
-                
-               <%@ include file="header.jsp" %>
-        
+
+                <%@ include file="header.jsp" %>
+
                 <legend class="text-center header">
                     <H1>MANTENIMIENTO DE LIBROS</H1>
                     <p class="p_log_cla">*login: Digitador, clave: 1 </p>
@@ -145,6 +140,6 @@
             </div>
         </div>
         <a href="#"><div class="up">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>↑</b></div></a>
-        
+
     </body>
 </html>

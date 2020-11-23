@@ -9,7 +9,7 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
-
+<%@ include file="fuentedatos.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,9 +21,6 @@
         <title>VALIDACION DE USUARIOS</title>
     </head>
     <body>
-        <sql:setDataSource var = "fuenteDatos" driver = "org.mariadb.jdbc.Driver"
-                           url = "jdbc:mariadb://localhost:3308/biblioteca"
-                           user = "root"  password = ""/>
         <c:if test="${empty param.usuario or empty param.clave}">
             <c:redirect url="frmlogin.jsp">
                 <c:param name="msg" value="Usuario o clave vacios"/>

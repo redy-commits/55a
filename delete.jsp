@@ -51,7 +51,7 @@
                 <table class="table" id="tabla">
                     <sql:query dataSource = "${fuenteDatos}" var = "result">
                         SELECT * from libro;
-                        </sql:query>
+                    </sql:query>
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">ID</th>

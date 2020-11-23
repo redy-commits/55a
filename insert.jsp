@@ -3,6 +3,7 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<%@ include file="fuentedatos.jsp" %>
 
 <c:set var="pageId" value="Insertar_L" />
 <c:set var="standalone" value="not" />
@@ -20,13 +21,6 @@
         </style>
     </head>
     <body>
-        <!--Conexion a base de datos-->
-        <sql:setDataSource var = "fuenteDatos" driver = "org.mariadb.jdbc.Driver"
-                           url = "jdbc:mariadb://localhost:3308/biblioteca"
-                           user = "root"  password = ""/>
-        <!--Fin Conexion a base de datos-->
-        
-        
         <sql:update dataSource = "${fuenteDatos}" var = "result">
             INSERT INTO libro (isbn,titulo,autor,editorial,fecha) VALUES (?,?,?,?,?);
             <sql:param value="${param.isbn}"/>
@@ -87,8 +81,8 @@
                 <legend class="text-center header">
                     <h2>Listado de libros actualizado con éxito</h2>
                 </legend>
-                    <!-- link que redirecciona a index-->
-                    <h3><a href="index.jsp" style="font-size:1cm;color:blue;">Regresar hacia página principal</a></h3>
+                <!-- link que redirecciona a index-->
+                <h3><a href="index.jsp" style="font-size:1cm;color:blue;">Regresar hacia página principal</a></h3>
             </div>
         </div>
         <!--Fin de la página-->
