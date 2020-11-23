@@ -15,6 +15,13 @@
                 <c:set var="nivel" value="0" scope="session"/>
             </c:if>
         </c:when>
+        <c:when test="${pageId eq 'Insertar_L' and (sessionScope.nivel < 1 or sessionScope.nivel>1)}">
+            <c:redirect url='error.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="yes"/>
+            </c:redirect>
+        </c:when>        
+        
     </c:choose>
 </c:if>
 <c:if test="${empty standalone or standalone eq null or standalone eq 'yes'}">

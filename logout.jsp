@@ -12,9 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CERRANDO LA SESIÓN</title>
+        <link rel="stylesheet" href="CSS/estilos.css" type="text/css">
     </head>
     <body>
-        <h1>ACABA DE CERRAR SESION, esto se hace eliminando o vaciando las variables de sesión.</h1>
+        <h1>ACABA DE CERRAR SESIÓN!.</h1>
             <c:set var="usuario" value="" scope="session" />
             <c:set var="nombre" value="" scope="session" />
             <c:set var="nivel" value="-1" scope="session" />

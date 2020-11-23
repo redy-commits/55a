@@ -3,12 +3,16 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
- <!DOCTYPE html>
+
+<c:set var="pageId" value="Insertar_L" />
+<c:set var="standalone" value="not" />
+<%@ include file="seguridad.jsp" %>
+
+
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Creando libro</title>
         <style>
@@ -35,6 +39,7 @@
         <div class="container p-3 my-3 bg-light border" id="encabezado">
             <legend class="text-center header">
                 <h1>CREANDO LIBROS</h1>
+                <%@include file="header.jsp" %>
             </legend>
         </div>
         <!--Inicio de tabla original mostrando registro creado-->
