@@ -8,6 +8,11 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<%@ include file="fuentedatos.jsp" %>
+
+<c:set var="pageId" value="Eliminar_L" />
+<c:set var="standalone" value="not" />
+<%@ include file="seguridad.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,12 +27,15 @@
         </style>
     </head>
     <body>
-        <!--Conexion a base de datos-->
-        <sql:setDataSource var = "fuenteDatos" driver = "org.mariadb.jdbc.Driver"
-                           url = "jdbc:mariadb://localhost:3308/biblioteca"
-                           user = "root"  password = ""/>
-        <!--Fin Conexion a base de datos-->
         <c:set var = "isbn" value = "${param.isbn}"/>
+        <!--VALIDANDO PARAMETROS VACIOS-->
+        <c:if test="${empty isbn}">
+            <c:redirect url="error.jsp">
+                <c:param name="tipo" value="parametro"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:if>
+        <!--FIN DE PARAMETROS VACIOS-->
         <div class="container p-3 my-3 bg-light border" id="encabezado">
             <legend class="text-center header">
                 <h1>ELIMINANDO REGISTRO</h1>

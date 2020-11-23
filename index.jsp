@@ -17,10 +17,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--CSS para Bootstrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <!--CSS local que sobreescribe algunos aspectos-->
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
+        <!--CSS para DataTables-->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+        <!--JS para Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <!--jQuery-->
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <!--JS para DataTables de jQuery-->
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,9 +48,8 @@
                 
                <%@ include file="header.jsp" %>
         
-        
                 <legend class="text-center header">
-                    <a id="home" href=#><H1>MANTENIMIENTO DE LIBROS</H1></a>
+                    <H1>MANTENIMIENTO DE LIBROS</H1>
                     <p class="p_log_cla">*login: Digitador, clave: 1 </p>
                     <p class="p_log_cla">**login: Mantenimiento, clave: 2</p>
                 </legend>

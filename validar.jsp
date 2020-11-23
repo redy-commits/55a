@@ -15,17 +15,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">   
         <title>VALIDACION DE USUARIOS</title>
     </head>
     <body>
-        <h1>Verificación de Usuarios</h1>
         <sql:setDataSource var = "fuenteDatos" driver = "org.mariadb.jdbc.Driver"
                            url = "jdbc:mariadb://localhost:3308/biblioteca"
                            user = "root"  password = ""/>
         <c:if test="${empty param.usuario or empty param.clave}">
             <c:redirect url="frmlogin.jsp">
-                <c:param name="msg" value="login o clave vacios"/>
+                <c:param name="msg" value="Usuario o clave vacios"/>
             </c:redirect>
         </c:if>
 
@@ -36,7 +37,7 @@
         </sql:query>
         <c:if test="${result.rows[0].cant < 1}"> 
             <c:redirect url="frmlogin.jsp">
-                <c:param name="msg" value="login o clave incorrectos"/>
+                <c:param name="msg" value="Usuario o clave incorrectos"/>
             </c:redirect>
         </c:if> 
         <sql:query dataSource = "${fuenteDatos}" var = "datos">
@@ -47,7 +48,13 @@
         <c:set var="usuario" value="${datos.rows[0].login}" scope="session" />
         <c:set var="nombre" value="${datos.rows[0].nombre}" scope="session" />
         <c:set var="nivel" value="${datos.rows[0].nivel}" scope="session" />
-        <p style="color:white;"><br><br>En unos segundos se redirijirá a la página de inicio</p>
+        <div class="container p-3 my-3 bg-light border" id="div_login_exitoso">
+            <h1>Verificación de Usuarios</h1>
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Sesion Iniciada</h4>
+                <p>Inicio de sesion correcto. En unos segundos se redirijirá a la página de inicio</p>
+            </div>
+        </div>
         <script>
             setTimeout(function () {
                 location.href = "index.jsp";

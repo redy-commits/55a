@@ -15,24 +15,34 @@
         <title>INICIO DE SESIÓN</title>
     </head>
     <body>
-        <h1 style="color: white">AUTENTICACION DE USUARIOS</h1>
-         <div id="id_div_sesion">
-            <c:if test="${not empty param.msg}">
-                <p style="color:red;">Error: ${param.msg}</p>
-            </c:if>
-            <form name="form_login" action="validar.jsp" method="post">
-                <!-- Username -->
-                <label for="usuario">Login:</label>
-                <input name="usuario" id="usuario" type="input" value="">
-                <!-- Password -->
-                <label for="clave">Clave:</label>
-     
-                    <input name="clave" id="clave" type="password">
-                <div id="lower">
-                   
-                    <input type="submit" value="Ingresar">
+        <div class="container p-3 my-3 bg-light border" id="id_div_sesion">
+            <div class="row">
+                <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
+                    col-12">
+                    <h1>AUTENTICACION DE USUARIOS</h1>
+                    <c:if test="${not empty param.msg}">
+                        <p style="color:red;">Error: ${param.msg}</p>
+                    </c:if>
+                    <form name="form_login" action="validar.jsp" method="post">
+                        <div class="form-group">
+                            <label for="usuario">Usuario</label>
+                            <input id="usuario" name="usuario"
+                                class="form-control" type="input"
+                                placeholder="Usuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="clave">Contraseña</label>
+                            <input id="clave" name="clave"
+                                class="form-control" type="password"
+                                placeholder="Clave">
+                        </div>
+                        <button type="submit" value="Ingresar" class="btn btn-primary mb-2">
+                            Entrar
+                        </button>
+                        <a href="index.jsp">Regresar</a>
+                    </form>
                 </div>
-            </form>       
+            </div>
         </div>
     </body>
 </html>

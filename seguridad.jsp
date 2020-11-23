@@ -21,7 +21,16 @@
                 <c:param name="logeado" value="yes"/>
             </c:redirect>
         </c:when>        
-        
+        <%--VALIDANDO DELETE, AGREGANDO PARAM DE DESTINO PARA REDIRECCIONAR ADECUADAMENTE--%>
+        <c:when test="${pageId eq 'Eliminar_L' and (sessionScope.nivel < 2 or sessionScope.nivel>2)}">
+            <c:redirect url='error.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="yes"/>
+                <c:param name="tipo" value="noEncontrado"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:when>
+        <%--FIN VALIDANDO DELETE--%>
     </c:choose>
 </c:if>
 <c:if test="${empty standalone or standalone eq null or standalone eq 'yes'}">
