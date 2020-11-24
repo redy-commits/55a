@@ -3,9 +3,8 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
-<%@ include file="fuentedatos.jsp" %>
+<%@ include file="fuentedatos.jsp" %><!--Fin Conexion a base de datos-->
 
-<!--Fin Conexion a base de datos-->
 <c:set var = "id" value = "${param.id}"/>
 <c:set var = "isbn" value = "${param.isbn}"/>
 <c:set var = "titulo" value = "${param.titulo}"/>

@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
@@ -37,7 +38,7 @@
             <div class="table-responsive">
                 <legend class="text-center header">
                     <h1>CREANDO LIBROS</h1>
-                    <h2>Listado de libros actualizada</h2>
+                    <h2>Listado de libros original</h2>
                 </legend>
                 <table class="table" id="tabla">
                     <sql:query dataSource = "${fuenteDatos}" var = "result">
@@ -79,7 +80,7 @@
                     <h2>Listado de libros actualizado con éxito</h2>
                 </legend>
                 <!-- link que redirecciona a index-->
-                <h3><a href="index.jsp" style="font-size:1cm;color:blue;">Regresar hacia página principal</a></h3>
+                <h3><a href="index.jsp" style="font-size:1cm;color:blue;">Regresar a la página principal</a></h3>
             </div>
         </div>
         <!--Fin de la página-->

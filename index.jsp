@@ -18,6 +18,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <!--CSS para Bootstrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <!--CSS local que sobreescribe algunos aspectos-->
@@ -44,11 +45,6 @@
         <div class="container p-3 my-3 bg-light border" id="formulario">
             <!-- el action ahora es con insert.jsp-->
             <form  method="get" name="Actualizar"  action="insert.jsp">
-                <legend class="text-center header">
-                    <h1>REGISTRO DE LIBROS</h1>
-                    <p class="p_log_cla">*login: Digitador, clave: 1 </p>
-                    <p class="p_log_cla">**login: Mantenimiento, clave: 2</p>
-                </legend>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-4"> <!-- ISBN -->
@@ -86,7 +82,7 @@
                         </div>
 
                         <div class="col-md-4"> <!-- Fecha Publicacion-->
-                            <label for="fechaPublicacion_id" class="control-label" >Fecha de Publicación</label>
+                            <label for="fechaPublicacion_id" class="control-label" >Fecha de publicación</label>
                             <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="" required="">
                         </div>        
                     </div>
@@ -134,7 +130,7 @@
                             <th scope="col">ISBN</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Editorial</th>
-                            <th scope="col">Fecha de Publicación</th>
+                            <th scope="col">Fecha de publicación</th>
                             <th scope="col">Autor</th>
                             <!--VALIDANDO QUE SOLO EL USUARIO NIVEL 2 PUEDA VER ESTOS CONTROLES-->
                             <c:if test="${sessionScope.nivel==2}"> 

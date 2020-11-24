@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
@@ -31,7 +32,7 @@
                     <input type="text" value="${param.id}" class="form-control" id="id" hidden>
                     <div class="col-md-4"> <!-- ISBN -->
                         <label for="isbn_id" class="control-label">ISBN</label>
-                        <input type="text" value="${param.isbn}" class="form-control" id="isbn" name="isbn" placeholder="0000000000  ">
+                        <input type="text" value="${param.isbn}" class="form-control" id="isbn" name="isbn" placeholder="0000000000  " readonly>
                     </div>    
 
                     <div class="col-md-4"> <!-- Titulo -->
@@ -65,7 +66,7 @@
                     </div>
 
                     <div class="col-md-4"> <!-- Fecha Publicacion-->
-                        <label for="fechaPublicacion_id" class="control-label">Fecha de Publicación</label>
+                        <label for="fechaPublicacion_id" class="control-label">Fecha de publicación</label>
                         <input type="date" value="${param.fecha}" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="">
                     </div>        
                 </div>

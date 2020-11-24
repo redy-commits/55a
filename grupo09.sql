@@ -1,4 +1,4 @@
-# SQL-Front 5.1  (Build 4.16)
+ï»¿# SQL-Front 5.1  (Build 4.16)
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE */;
 /*!40101 SET SQL_MODE='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */;
@@ -10,7 +10,7 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 
-# Host: localhost:3308    Database: biblioteca
+# Host: localhost:3308    Database: grupo09
 # ------------------------------------------------------
 # Server version 5.5.5-10.1.13-MariaDB
 
@@ -33,7 +33,7 @@ LOCK TABLES `editorial` WRITE;
 /*!40000 ALTER TABLE `editorial` DISABLE KEYS */;
 INSERT INTO `editorial` VALUES (1,'Santillana');
 INSERT INTO `editorial` VALUES (2,'Panini');
-INSERT INTO `editorial` VALUES (3,'El volcán');
+INSERT INTO `editorial` VALUES (3,'El volcÃ¡n');
 INSERT INTO `editorial` VALUES (4,'Caja negra');
 /*!40000 ALTER TABLE `editorial` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -59,10 +59,10 @@ CREATE TABLE `libro` (
 
 LOCK TABLES `libro` WRITE;
 /*!40000 ALTER TABLE `libro` DISABLE KEYS */;
-INSERT INTO `libro` VALUES (1,'0000000001','Crepúsculo','Edward Cullen','Santillana','2010-12-01');
-INSERT INTO `libro` VALUES (2,'9283019230','Especies útiles de la flora salvadoreña','David Joaquín Guzmán','Panini','1926-06-25');
-INSERT INTO `libro` VALUES (3,'2973811023','Edipo rey','Sófocles','El volcán','0430-09-30');
-INSERT INTO `libro` VALUES (4,'0000000000','Psicología del éxito','Mario Luna','Caja negra','2015-06-01');
+INSERT INTO `libro` VALUES (1,'0000000001','CrepÃºsculo','Edward Cullen','Santillana','2010-12-01');
+INSERT INTO `libro` VALUES (2,'9283019230','Especies Ãºtiles de la flora salvadoreÃ±a','David JoaquÃ­n GuzmÃ¡n','Panini','1926-06-25');
+INSERT INTO `libro` VALUES (3,'2973811023','Edipo rey','SÃ³focles','El volcÃ¡n','0430-09-30');
+INSERT INTO `libro` VALUES (4,'0000000000','PsicologÃ­a del Ã©xito','Mario Luna','Caja negra','2015-06-01');
 /*!40000 ALTER TABLE `libro` ENABLE KEYS */;
 UNLOCK TABLES;
 

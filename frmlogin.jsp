@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
@@ -19,7 +20,7 @@
             <div class="row">
                 <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
                     col-12">
-                    <h1>AUTENTICACION DE USUARIOS</h1>
+                    <h1>AUTENTICACIÓN DE USUARIOS</h1>
                     <c:if test="${not empty param.msg}">
                         <p style="color:red;">Error: ${param.msg}</p>
                     </c:if>

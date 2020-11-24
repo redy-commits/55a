@@ -1,7 +1,7 @@
 <%-- 
     Document   : validar
     Created on : 11-20-2020, 11:23:34 PM
-    Author     : Geovanni
+    Author     : Grupo nueve
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,11 +14,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">   
-        <title>VALIDACION DE USUARIOS</title>
+        <title>VALIDACIÓN DE USUARIOS</title>
     </head>
     <body>
         <c:if test="${empty param.usuario or empty param.clave}">
@@ -46,16 +47,16 @@
         <c:set var="nombre" value="${datos.rows[0].nombre}" scope="session" />
         <c:set var="nivel" value="${datos.rows[0].nivel}" scope="session" />
         <div class="container p-3 my-3 bg-light border" id="div_login_exitoso">
-            <h1>Verificación de Usuarios</h1>
+            <h1>Verificación de usuarios</h1>
             <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Sesion Iniciada</h4>
-                <p>Inicio de sesion correcto. En unos segundos se redirijirá a la página de inicio</p>
+                <h4 class="alert-heading">Sesion iniciada</h4>
+                <p>Inicio de sesión correcto. En unos segundos se le redirigirá a la página de inicio. Bienvenido.</p>
             </div>
         </div>
         <script>
             setTimeout(function () {
                 location.href = "index.jsp";
-            }, 5000);
+            }, 3000);
         </script>
     </body>
 </html>

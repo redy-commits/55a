@@ -17,6 +17,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="img/ico.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/estilos.css" type="text/css">      
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
@@ -46,7 +47,7 @@
         <div class="container p-3 my-3 bg-light text-dark border" id="tablaOriginal">
             <div class="table-responsive">
                 <legend class="text-center header">
-                    <h2>Listado de libros anterior</h2>
+                    <h2>Listado de libros original</h2>
                 </legend>
                 <table class="table" id="tabla">
                     <sql:query dataSource = "${fuenteDatos}" var = "result">
@@ -58,7 +59,7 @@
                             <th scope="col">ISBN</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Editorial</th>
-                            <th scope="col">Fecha de Publicación</th>
+                            <th scope="col">Fecha de publicación</th>
                             <th scope="col">Autor</th>
                         </tr>
                     </thead>
@@ -104,7 +105,7 @@
                             <th scope="col">ISBN</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Editorial</th>
-                            <th scope="col">Fecha de Publicación</th>
+                            <th scope="col">Fecha de publicación</th>
                             <th scope="col">Autor</th>
                         </tr>
                     </thead>
