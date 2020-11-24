@@ -31,17 +31,12 @@
             <sql:param value="${param.listaEditorial}"/>
             <sql:param value="${param.fechaPublicacion}"/>                
         </sql:update>
-
-        <div class="container p-3 my-3 bg-light border" id="encabezado">
-            <legend class="text-center header">
-                <h1>CREANDO LIBROS</h1>
-                <%@include file="header.jsp" %>
-            </legend>
-        </div>
+        <%@include file="header.jsp" %>
         <!--Inicio de tabla original mostrando registro creado-->
         <div class="container p-3 my-3 bg-light text-dark border" id="tablaOriginal">
             <div class="table-responsive">
                 <legend class="text-center header">
+                    <h1>CREANDO LIBROS</h1>
                     <h2>Listado de libros actualizada</h2>
                 </legend>
                 <table class="table" id="tabla">

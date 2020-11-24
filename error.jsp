@@ -31,7 +31,7 @@
                             Intento de ejecutar una jsp, sin proporcionar los parametros necesarios
                         </c:when>
                         <c:when test="${param.tipo eq 'noEncontrado'}">
-                            Pagina No Encontrada
+                            Pagina No Encontrada (Acceso Denegado)
                         </c:when>
                     </c:choose>
                 </p>

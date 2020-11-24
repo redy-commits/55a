@@ -19,7 +19,7 @@
             <c:redirect url='error.jsp'>
                 <c:param name="operacion" value="${pageId}"/>
                 <c:param name="logeado" value="yes"/>
-                <c:param name="tipo" value="parametro"/>
+                <c:param name="tipo" value="noEncontrado"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:when>        
@@ -37,11 +37,10 @@
             <c:redirect url='error.jsp'>
                 <c:param name="operacion" value="${pageId}"/>
                 <c:param name="logeado" value="yes"/>
-                <c:param name="tipo" value="parametro"/>
+                <c:param name="tipo" value="noEncontrado"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:when>
-        
     </c:choose>
 </c:if>
 <c:if test="${empty standalone or standalone eq null or standalone eq 'yes'}">
