@@ -37,14 +37,15 @@
     </head>
     <body>
         <script type="text/javascript" src="JS/metodos.js"></script>
+        <%@ include file="header.jsp" %>
+        <!--VALIDANDO LA VISIBILIDAD DE ELEMENTOS HTML SEGUN USUARIO-->
+        <!--FORMULARIO DE INGRESAR SOLO DEBE SER VISTO POR USUARIO NIVEL 1-->
+        <c:if test="${sessionScope.nivel==1}">
         <div class="container p-3 my-3 bg-light border" id="formulario">
             <!-- el action ahora es con insert.jsp-->
             <form  method="get" name="Actualizar"  action="insert.jsp">
-
-                <%@ include file="header.jsp" %>
-
                 <legend class="text-center header">
-                    <H1>MANTENIMIENTO DE LIBROS</H1>
+                    <h1>REGISTRO DE LIBROS</h1>
                     <p class="p_log_cla">*login: Digitador, clave: 1 </p>
                     <p class="p_log_cla">**login: Mantenimiento, clave: 2</p>
                 </legend>
@@ -117,10 +118,11 @@
                 </script>
             </form>
         </div>
+        </c:if>
         <div class="container p-3 my-3 bg-light text-dark border" id="tablaDatos">
             <div class="table-responsive">
                 <legend class="text-center header">
-                    <h2>Listado de libros</h2>
+                    <h1>LISTADO DE LIBROS</h1>
                 </legend>
                 <table class="table" id="tabla">
                     <sql:query dataSource = "${fuenteDatos}" var = "result">
@@ -134,7 +136,10 @@
                             <th scope="col">Editorial</th>
                             <th scope="col">Fecha de Publicación</th>
                             <th scope="col">Autor</th>
+                            <!--VALIDANDO QUE SOLO EL USUARIO NIVEL 2 PUEDA VER ESTOS CONTROLES-->
+                            <c:if test="${sessionScope.nivel==2}"> 
                             <th scope="col">Acción</th>
+                            </c:if>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,10 +155,12 @@
                                 </td>
                                 <td><c:out value = "${row.fecha}"/></td>
                                 <td><c:out value = "${row.autor}"/></td>
+                                <c:if test="${sessionScope.nivel==2}">
                                 <td>
                                     <a id="actualizate" href="frmupdate.jsp?id=${row.Id}&isbn=${row.isbn}&titulo=${row.titulo}&editorial=${row.editorial}&fecha=${row.fecha}&autor=${row.autor}" class="btn btn-warning">Actualizar</a>
                                     <br><a id="eliminate" onclick="eliminar('${row.isbn}')" class="btn btn-danger" >Eliminar</a>
                                 </td>
+                                </c:if>
                             </tr>
                         </c:forEach>
                     </tbody>
