@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-4"> <!-- Editorial -->
                             <label for="editorial_id" class="control-label">Editorial</label>
-                            <select class="form-control" id="listaEditorial" name="listaEditorial">
+                            <select class="form-control" id="listaEditorial" name="listaEditorial" >
                                 <optgroup><option value= "">Elija su editorial...</option>
                                     <sql:query dataSource = "${fuenteDatos}" var = "editorial">
                                         SELECT nombre from editorial;
@@ -86,7 +86,7 @@
 
                         <div class="col-md-4"> <!-- Fecha Publicacion-->
                             <label for="fechaPublicacion_id" class="control-label" >Fecha de Publicación</label>
-                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" >
+                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="" required="">
                         </div>        
                     </div>
                 </div>
@@ -99,9 +99,8 @@
                         txtIsbn=document.getElementById("isbn").value;
                         txtTitulo=document.getElementById("titulo").value;
                         txtAutor=document.getElementById("autor").value;
-                        txtFecha=document.getElementById("fechaPublicacion").value;
                         val=0;
-                        if(txtIsbn=="" || txtTitulo=="" || txtAutor=="" || txtFecha==""){
+                        if(txtIsbn=="" || txtTitulo=="" || txtAutor=="" ){
                             val++;
                         }
                         if(val==0){
@@ -114,7 +113,6 @@
                     document.getElementById("isbn").addEventListener("keyup", habilitar);
                     document.getElementById("titulo").addEventListener("keyup", habilitar);
                     document.getElementById("autor").addEventListener("keyup", habilitar);
-                    document.getElementById("fechaPublicacion").addEventListener("click", habilitar);
                     document.getElementById("insertar").addEventListener("click", () => {});
                 </script>
             </form>
